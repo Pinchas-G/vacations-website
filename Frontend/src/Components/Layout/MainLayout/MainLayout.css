@@ -1,0 +1,36 @@
+.MainLayout {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% auto 5%;
+    grid-template-columns: repeat(6, 1fr);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.MainLayout.light {
+    background: #e7bfbe52;
+}
+
+.MainLayout>* {
+    grid-column: span 6;
+}
+
+.MainLayout header {
+    position: sticky;
+    top: 0;
+}
+
+.MainLayout main {
+    background: var(--background-color);
+}
+
+.MainLayout footer {
+    display: grid;
+    place-content: center;
+}
+
+.MainLayout header,
+.MainLayout footer {
+    background: var(--primary-color);
+    padding: var(--padding-2);
+}

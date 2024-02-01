@@ -1,0 +1,143 @@
+.MainLayout.light .EditVacation {
+    --secondary-color: #d37570;
+}
+
+.EditVacation {
+    display: flex;
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+    height: 100%;
+    background-image: url(../../../Assets/form-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    box-shadow: 0 0 16px -5px #000;
+}
+
+.EditVacation form {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    row-gap: 4px;
+    flex-grow: 2;
+}
+
+.EditVacation form h2 {
+    font-family: cursive;
+    padding: 18px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.EditVacation form label {
+    color: var(--secondary-color);
+}
+
+.EditVacation form label.file-label {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 28px;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.EditVacation div:has(label.file-label) {
+    position: relative;
+}
+
+.EditVacation span.file-text {
+    position: absolute;
+    bottom: 32px;
+    left: 10px;
+}
+
+.EditVacation form input,
+.EditVacation form textarea {
+    font-size: 20px;
+    color: var(--text-color);
+    font-style: italic;
+    border: 0;
+    outline: none;
+    text-indent: 8px;
+    background: no-repeat;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.EditVacation form textarea {
+    width: 100%;
+    min-height: 70px;
+    resize: vertical;
+    max-height: 200px;
+    padding-left: 10px;
+    border: 0.5px dashed var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.EditVacation input[type='file'] {
+    opacity: 0;
+}
+
+.EditVacation form input~span {
+    font-size: 12px;
+    color: var(--secondary-color);
+    height: 14px;
+    padding-bottom: 6px;
+}
+
+.EditVacation form .form-btn {
+    outline: none;
+    color: #88613f;
+    padding: 12px 60px;
+    border: 2px dashed #88613f;
+    border-radius: 15px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px var(--secondary-color), 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    transition: .1s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 7%;
+}
+
+.MainLayout.light .EditVacation form .form-btn {
+    color: var(--background-color);
+    border: 2px dashed var(--background-color);
+}
+
+.EditVacation .form-btn:hover {
+    scale: var(--scale-2);
+}
+
+.EditVacation div:has(>img) {
+    flex-grow: 1;
+    display: grid;
+    place-items: center;
+}
+
+.EditVacation div>img {
+    border-radius: var(--border-radius);
+    opacity: .5;
+    width: 300px;
+    height: 200px;
+    opacity: 0.5;
+    max-width: 300px;
+    background: url(../../../Assets/image-not-found.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.EditVacation textarea::-webkit-scrollbar {
+    width: 4px;
+}
+
+.EditVacation textarea::-webkit-scrollbar-thumb {
+    background: #88613f;
+    border-radius: 6px;
+}
+
+.EditVacation textarea::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+    border-radius: 6px;
+}

@@ -1,0 +1,44 @@
+.MainLayout.light .Register {
+    --secondary-color: #d37570;
+}
+
+.Register {
+    display: grid;
+    place-items: center;
+}
+
+.Register form {
+    display: flex;
+    flex-flow: column;
+    padding: var(--padding-3);
+    width: 270px;
+    background-image: url(../../Assets/form-background.png);
+    row-gap: 6px;
+    background-size: 838px;
+    background-repeat: no-repeat;
+    background-position-x: -204px;
+    box-shadow: 0 0 16px -5px #000;
+}
+
+.MainLayout.light .Register form {
+    box-shadow: 0 0 16px -5px #000;
+}
+
+.Register h2 {
+    text-align: center;
+    padding: var(--padding-2);
+    font-family: cursive;
+}
+
+.Register input {
+    all: unset;
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: -7px;
+}
+
+.Register input~span {
+    display: block;
+    height: 12px;
+    color: #cddc39;
+    font-size: 13px;
+}

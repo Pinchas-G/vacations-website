@@ -1,0 +1,146 @@
+.VacationsList {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 70px auto 70px;
+    place-items: center;
+}
+
+.VacationsList .header-list {
+    display: flex;
+    column-gap: 40px;
+}
+
+.VacationsList .header-list button {
+    height: 100%;
+}
+
+.VacationsList .filters {
+    display: flex;
+    height: 40px;
+    width: 500px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: none;
+    column-gap: .5px;
+    background: var(--text-color);
+}
+
+.VacationsList .filters .filter-item {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.VacationsList .filter-item span {
+    position: absolute;
+}
+
+.VacationsList .filter-item input[type="radio"] {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+.VacationsList .filter-item input[type="radio"]:checked {
+    background: var(--secondary-color);
+}
+
+.VacationsList .container {
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+
+
+.VacationsList .pagenation {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    user-select: none;
+    background: #333;
+    padding: 12px;
+    border-radius: 25px;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+}
+
+.VacationsList .pagenation a {
+    color: #fff;
+}
+
+.VacationsList .pagenation .disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.VacationsList .pagenation .page-num {
+    cursor: pointer;
+}
+
+.VacationsList .pagenation .page-num:not(.page-num.prev, .page-num.next) {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    min-width: 35px;
+    aspect-ratio: 1;
+}
+
+.VacationsList .pagenation .page-num:hover {
+    background: rgb(90, 176, 147);
+    color: #000;
+}
+
+.VacationsList .pagenation .page-num.active {
+    background: aquamarine;
+    color: #000;
+}
+
+.VacationsList .pagenation .page-num.next,
+.VacationsList .pagenation .page-num.prev {
+    border-radius: 25px;
+    padding: 6px;
+}
+
+dialog {
+    border: 0;
+    border-radius: 10px;
+    width: 400px;
+    text-align: justify;
+    flex-flow: column;
+    padding: 20px;
+    background: var(--secondary-color);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog::backdrop {
+    background: rgb(0 0 0 / .3);
+}
+
+dialog button {
+    all: unset;
+    rotate: 45deg;
+    font-size: 51px;
+    cursor: pointer;
+    position: absolute;
+    top: -25px;
+    left: 0;
+}
+
+dialog button:hover {
+    scale: var(--scale-3);
+}
+
+dialog p {
+    color: var(--text-color) !important;
+}

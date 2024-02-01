@@ -1,0 +1,34 @@
+.AuthMenu {
+    color: var(--text-color);
+}
+
+.AuthMenu .auth-controls {
+    display: flex;
+    column-gap: 20px;
+    justify-content: flex-end;
+}
+
+.AuthMenu .auth-controls svg {
+    fill: var(--text-color);
+}
+
+.AuthMenu .auth-controls a {
+    display: flex;
+    place-items: center;
+}
+
+.AuthMenu .auth-controls a,
+.logout {
+    text-decoration: none;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.AuthMenu .auth-controls a:hover,
+.logout:hover {
+    scale: var(--scale-3);
+}
+
+.AuthMenu .auth-controls a.active {
+    font-weight: 500;
+}

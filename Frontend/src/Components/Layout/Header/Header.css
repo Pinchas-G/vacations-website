@@ -1,0 +1,73 @@
+.Header {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header .logo {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: left;
+}
+
+.MainLayout.dark .Header .logo {
+    background-image: url(../../../Assets/logo-light.png);
+}
+
+.MainLayout.light .Header .logo {
+    background-image: url(../../../Assets/logo-dark.png);
+}
+
+.Header .header-container {
+    display: flex;
+    column-gap: 30px;
+    flex-flow: column;
+    row-gap: 10px;
+}
+
+.Header .header-container .header-control {
+    display: flex;
+    flex-flow: row;
+    column-gap: 30px;
+    position: relative;
+    margin-right: 88px;
+    width: 225px;
+}
+
+.Header .header-container .theme-swich {
+    position: absolute;
+    scale: .3;
+    top: -27px;
+    right: -147px;
+}
+
+.Header menu {
+    display: flex;
+    flex-flow: row;
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    padding: 2px 14px;
+    place-content: space-around;
+}
+
+.Header menu a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.Header menu a.active {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.MainLayout.dark .Header menu a.active {
+    text-shadow: 1px 1px 2px var(--primary-color);
+}
+
+.MainLayout.light .Header menu a:not(.active) {
+    text-shadow: 1px 1px 1px #4F8380;
+}

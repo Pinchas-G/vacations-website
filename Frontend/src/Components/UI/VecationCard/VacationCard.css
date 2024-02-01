@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+
+.VacationCard *,
+.VacationCard *::before,
+.VacationCard *::after {
+    box-sizing: border-box;
+}
+
+.VacationCard {
+    --brand-color: var(--secondary-color);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --font-title: "Montserrat", sans-serif;
+    --font-text: "Lato", sans-serif;
+
+    background: var(--primary-color);
+    border-radius: 10px;
+    height: fit-content;
+    transition: .3s ease-in;
+    transform-origin: top center;
+}
+
+.VacationCard:hover {
+    scale: var(--scale-2);
+}
+
+.VacationCard.delete {
+    scale: 0;
+    opacity: 0;
+}
+
+.VacationCard .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-1);
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.VacationCard .header svg {
+    fill: var(--text-color);
+}
+
+.VacationCard .header .edit-card {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+
+.VacationCard .header .edit-card span {
+    display: flex;
+}
+
+.VacationCard .header .edit-card span:hover {
+    cursor: pointer;
+    scale: 1.2;
+}
+
+.VacationCard .header .date {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+
+.VacationCard h2,
+.VacationCard p {
+    margin: 0;
+}
+
+.VacationCard h2 {
+    font-size: 2.25rem;
+    font-family: var(--font-title);
+    color: var(--white);
+    line-height: 1.1;
+}
+
+.VacationCard p {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--white);
+}
+
+.VacationCard .flow>*+* {
+    margin-top: var(--flow-space, 1em);
+}
+
+.VacationCard .card {
+    display: grid;
+    place-items: center;
+    width: 330px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.VacationCard .card>* {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.VacationCard .card__background {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+}
+
+.VacationCard .card__content {
+    --flow-space: 0.9375rem;
+    height: 100%;
+    padding: 12% 1.25rem 1.875rem;
+    background: linear-gradient(180deg,
+            hsla(0, 0%, 0%, 0) 0%,
+            hsla(0, 0%, 0%, 0.3) 10%,
+            hsl(0, 0%, 0%) 100%);
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.VacationCard .card__content--container {
+    --flow-space: 1.25rem;
+}
+
+.VacationCard .card__title {
+    font-size: 24px;
+    position: relative;
+    width: fit-content;
+}
+
+.VacationCard .card__title::after {
+    content: "";
+    position: absolute;
+    height: 0.3125rem;
+    width: calc(100% + 1.25rem);
+    bottom: calc((1.25rem - 0.5rem) * -1);
+    left: -1.25rem;
+    background-color: var(--brand-color);
+}
+
+.VacationCard .card__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.VacationCard .card__button {
+    padding: 4px;
+    width: fit-content;
+    width: -moz-fit-content;
+    font-feature-settings: "smcp";
+    font-variant: small-caps;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--brand-color);
+    font-family: var(--font-title);
+    font-size: 12px;
+    color: var(--black);
+    margin-top: 5px;
+    outline: none;
+    border: 0;
+    margin-top: auto;
+}
+
+.VacationCard .card__button:focus {
+    outline: 2px solid black;
+    outline-offset: -5px;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+    .VacationCard .card__content {
+        transform: translateY(60%);
+        transition: transform 500ms ease-out;
+        transition-delay: .3s;
+    }
+
+    .VacationCard .card__title::after {
+        opacity: 0;
+        transform: scaleX(0);
+        transition: opacity 1000ms ease-in, transform 500ms ease-out;
+        transition-delay: 500ms;
+        transform-origin: right;
+    }
+
+    .VacationCard .card__background {
+        transition: transform 500ms ease-in;
+    }
+
+    .VacationCard .card__content--container> :not(.card__title),
+    .VacationCard .card__button {
+        opacity: 0;
+        transition: transform 500ms ease-out, opacity 500ms ease-out;
+    }
+
+    .VacationCard .card:hover .card__content,
+    .VacationCard .card:focus-within .card__content {
+        transform: translateY(0);
+        transition: transform 500ms ease-in;
+    }
+
+    .VacationCard .card:focus-within .card__content {
+        transition-duration: 0ms;
+    }
+
+    .VacationCard .card:hover .card__background,
+    .VacationCard .card:focus-within .card__background {
+        transform: scale(1.3);
+    }
+
+    .VacationCard .card:hover .card__content--container> :not(.card__title),
+    .VacationCard .card:hover .card__button,
+    .VacationCard .card:focus-within .card__content--container> :not(.card__title),
+    .VacationCard .card:focus-within .card__button {
+        opacity: 1;
+        transition: opacity 500ms ease-in;
+        transition-delay: 1000ms;
+    }
+
+    .VacationCard .card:hover .card__title::after,
+    .VacationCard .card:focus-within .card__title::after {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: opacity 500ms ease-in, transform 500ms ease-in;
+        transition-delay: 500ms;
+    }
+
+    .VacationCard .FollowerCheckbox .container {
+        background: none;
+        padding: 0;
+        gap: 6px;
+        color: var(--text-color);
+    }
+
+    .MainLayout.dark .VacationCard .FollowerCheckbox .container:has(input) svg.feather path {
+        fill: var(--primary-color);
+        stroke: var(--text-color);
+    }
+
+    .MainLayout.light .VacationCard .FollowerCheckbox .container:has(input) svg.feather path {
+        fill: var(--primary-color);
+        stroke: var(--text-color);
+    }
+
+    .VacationCard .FollowerCheckbox .container:has(input:checked) svg.feather path {
+        fill: hsl(306.08deg 100% 79.8%) !important;
+        stroke: hsl(306.08deg 100% 79.8%) !important;
+    }
+}

@@ -1,0 +1,13 @@
+.PageNotFound {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.PageNotFound img {
+    filter: invert(1);
+
+}
+
+.MainLayout.light .PageNotFound img {
+    filter: invert(0);
+}

@@ -1,0 +1,58 @@
+.ItemsCountDrop {
+    display: inline-block;
+}
+
+.ItemsCountDrop .dropdown {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row;
+    width: 80px;
+}
+
+.ItemsCountDrop .dropdown div:has(svg) {
+    width: 39px;
+    display: grid;
+    padding: 8px;
+    place-items: center;
+    border: var(--border);
+}
+
+.ItemsCountDrop .selected-value {
+    border: var(--border);
+    width: 39px;
+    text-align: center;
+    display: grid;
+    padding: 10px 0px;
+}
+
+.ItemsCountDrop .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: calc(100% - 2px);
+    text-align: center;
+}
+
+.MainLayout.dark .ItemsCountDrop .options {
+    background: var(--background-color);
+}
+
+.ItemsCountDrop .option {
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+.ItemsCountDrop .option:hover {
+    background-color: #f0f0f0;
+}

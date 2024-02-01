@@ -1,0 +1,118 @@
+:root {
+  /* Colors */
+  --primary-color: #4F8380;
+  --secondary-color: #e7c0be;
+  --background-color: #444;
+  --text-color: #fff;
+
+  /* Borders and Border Radius */
+  --border: 1px solid var(--secondary-color);
+  --border-radius: 10px;
+
+  /* Box Shadow */
+  --box-shadow: 0 0 1px var(--secondary-color);
+
+  /* Transition */
+  --transition: .3s;
+
+  /* Icons */
+  --icon-color: var(--text-color);
+
+  /* Padding */
+  --padding-1: 6px;
+  --padding-2: 12px;
+  --padding-3: 18px;
+
+  /* Scales */
+  --scale-1: 1.03;
+  --scale-2: 1.05;
+  --scale-3: 1.08;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+body .MainLayout.light {
+  /* Colors */
+  --primary-color: #cae2e0;
+  --secondary-color: #e7c0be;
+  --background-color: #fffff0;
+  --text-color: #444;
+
+  /* Borders and Border Radius */
+  --border: 1px solid var(--secondary-color);
+  --border-radius: 10px;
+
+  /* Box Shadow */
+  --box-shadow: 0 0 1px var(--secondary-color);
+
+  /* Transition */
+  --transition: .3s;
+
+  /* Icons */
+  --icon-color: var(--text-color);
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+ul,
+menu {
+  list-style: none;
+}
+
+.MainLayout.light button.cool {
+  --c: rgb(79, 131, 128);
+}
+
+.MainLayout.dark button.cool {
+  --c: rgb(202, 226, 224);
+}
+
+button.cool {
+  --b: 2px;
+  --s: .50em;
+  /* --c: var(--primary-color); */
+  padding: calc(0.03em + var(--s)) calc(1.3em + var(--s));
+  color: var(--c);
+  --_p: var(--s);
+  background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--c) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.2em;
+}
+
+button.cool:hover,
+button.cool:focus-visible {
+  --_p: 0px;
+  outline-color: var(--c);
+  outline-offset: .05em;
+}
+
+button.cool:active {
+  background: var(--c);
+  color: #fff;
+}
+
+button.cool {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+svg,
+path:not(.recharts-rectangle) {
+  fill: var(--text-color);
+}
